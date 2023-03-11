@@ -80,21 +80,19 @@ refs.inputEl.addEventListener(
 // }
 
 function renderCountryList(countries) { 
-//  clearCountryInfo();
   const liElst = countries.map(country => {
    const { name, flags } = country;
-    return `<li class="country-list__item">
-        <img src="${flags.svg}" alt="Flag of${name.official}" class="country-flag" width ="30" hight="20">
-        <h2 class="country-name">  ${country.name.official}</h2>
+    return `<li class='country-list__item'>
+        <img src='${flags.svg} ' alt='Flag of${name.official}' class='country-flag' width ='30' hight='20'>
+        <h2 class='country-name'>  ${country.name.official}</h2>
       </li>`;
-    // liElst.style.display = 'flex';
   });
  
-    refs.countryListEl.innerHTML = liElst;
+    refs.countryListEl.innerHTML = liElst.join('');
 }
 
 
-// вставлення розмітки 1 країни
+// вставлення розмітки картки країни
 function renderOneCountry(countries) {
   // clearCountrysList();
   // перебір країни з масиву об'єктів
