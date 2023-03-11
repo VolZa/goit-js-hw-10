@@ -11,28 +11,15 @@ const refs = {
   countryInfoEl: document.querySelector('.country-info'),
 };
 
-// function clearCountryInfo() {
-//   refs.countryInfoEl.innerHTML = '';
-// }
-
-// function clearCountrysList() {
-//   refs.countryListEl.innerHTML = '';
-// }
-
-
-
-
 refs.inputEl.addEventListener(
   'input',
   debounce(e => {
     //видалення початкових та кінцевих пробілів
     const searchQuery = refs.inputEl.value.trim();
     cleanElCountry(); 
-      // clearCountryInfo();
-      // clearCountrysList();
-   
-    // якщо немає значення - очистити список та вийти з функції
-    if (!searchQuery) {cleanElCountry(); return;}
+    
+    // якщо немає значення - вийти з функції
+    if (!searchQuery) {return;}
 
       // отримання списку країн
       fetchCountries(searchQuery).then(foundData => {
