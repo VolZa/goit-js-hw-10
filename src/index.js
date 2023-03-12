@@ -86,14 +86,14 @@ function renderOneCountry(countries) {
   const markup = countries
     .map(country => {
       const languages = Object.values(country.languages); //.split(',').join(', ')
-      return `<li>
+      return `<div>
       <img src='${country.flags.svg}' alt='Flag of ${country.name.official
         }' width='30' hight='20'>
          <p>${country.name.official}</p>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
             <p><b>Languages</b>: ${languages} </p>
-                </li>`;
+                </div>`;
     })
     .join(''); // сполучити рядки
 
